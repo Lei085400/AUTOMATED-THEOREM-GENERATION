@@ -527,27 +527,27 @@ class MCTS:
         # 3. Update all passing nodes with reward
         self.backup(expand_node, reward)
 
-        if(expand_node.new): #生成了新定理
-          path = []  #新定理所用策略
-          unused_list = expand_node.state[:-1]
-          new_node = copy.copy(expand_node)
-          while new_node.parent is not None:
-            if(new_node.state == unused_list):
-              break
-            path.append(new_node.tac)
-            new_node = new_node.parent
-          path.reverse()
-          expand_node.path = path
-          # print("该定理策略为：")
-          # print(path)
-          print("#############################")
-          print("新定理为：")
-          new_theorem = generate_theorem(expand_node,name+str(i),assertion_labels)
+        # if(expand_node.new): #生成了新定理
+        #   path = []  #新定理所用策略
+        #   unused_list = expand_node.state[:-1]
+        #   new_node = copy.copy(expand_node)
+        #   while new_node.parent is not None:
+        #     if(new_node.state == unused_list):
+        #       break
+        #     path.append(new_node.tac)
+        #     new_node = new_node.parent
+        #   path.reverse()
+        #   expand_node.path = path
+        #   # print("该定理策略为：")
+        #   # print(path)
+        #   print("#############################")
+        #   print("新定理为：")
+        #   new_theorem = generate_theorem(expand_node,name+str(i),assertion_labels)
           
-          with open('out.json', 'a') as file:
-            json.dump(new_theorem, file)
-            file.write('\n')
-          print(new_theorem)
+        #   with open('out.json', 'a') as file:
+        #     json.dump(new_theorem, file)
+        #     file.write('\n')
+        #   print(new_theorem)
           # path = []
           # new_node = copy.copy(expand_node)
           # while new_node.tac is not None:
@@ -559,87 +559,58 @@ class MCTS:
           # print(path)
       return node,len(tactic_generator(axiom_file,symbol_file))
 
-    def runmcts(self, mm, f_hyps, e_hyps):
-        node =  self.node
-        computation_budget = 10000000000
+
+    def runmcts(self, mm, f_hyps, e_hyps, axiom_file,symbol_file):
+     
+      node =  self.node
+      computation_budget = 20000
+      assersions,assertion_labels = read_axioms_json(axiom_file) # 获取已有公理的assertion list
+      symbol_dict = read_symbols_json(symbol_file)  #获取符号字典
+      outputs = []
       
-        # Run as much as possible under the computation budget
-        for i in range(computation_budget):
+      # Run as much as possible under the computation budget
+      for i in range(computation_budget):
 
-          # 1. Find the best node to expand
-          expand_node = self.tree_policy(node, False, mm, f_hyps, e_hyps)
-          # print("当前在第{}层, 父节点id为：{},".format(expand_node.depth,expand_node.parent.state.state.id))
-          # if(expand_node.depth > 1):
-          #   flag = 0
-          #   for node_puct in expand_node.parent.parent.children: #父节点及其兄弟节点
-          #     if(node_puct.state.state == 1 or node_puct.state.state == -1):
-          #       if(flag == 0):
-          #         print("当前节点的puct：{}".format(node_puct.puct))
-          #         flag = 1
-          #     else:
-          #       print("当前节点的id为：{} puct：{}".format(node_puct.state.state.id, node_puct.puct))
-          # print("父节点id为：{}".format(expand_node.parent.state.state.id))
-          
-          # print("节点状态为：{}".format(node.state.state))
-          # print("生成该节点选择策略为：{}".format(expand_node.state.tac))    
-          
-          # # print("节点概率为：{}".format(expand_node.prob))   
-          # if(expand_node.state.state.isFinish()):
-          #   print("该策略有效")
-          # elif(expand_node.state.state.error is not None):
-          #   print("该策略失败")
-          # else:
-          #   # print("当前节点id为：{},证明未结束".format(expand_node.state.state.id))
-          #   print("证明未结束")
-            
-          if(expand_node.isFinish()):
-            print(expand_node)
-            print("成功策略：")
-            path = []
-            state_list = []
-            while expand_node.tac is not None:
-                path.append(expand_node.tac)
-                state_list.append(expand_node.state)
-                expand_node = expand_node.parent
-            path.reverse()
-            state_list.append(node.state)
-            state_list.reverse()
-            
-            print("成功路径策略：")
-            for tatic in path:
-              print(tatic)
-            
-            print("成功路径状态：")
-            for state in state_list:
-              print(state)
-            
-            return expand_node
-
-          # 2. Random run to add node and get reward
-          # reward = self.default_policy(expand_node)
-          ############################################
-          
-          if(expand_node.state.error is not None):
-            reward = -1
-          elif(expand_node.state.isFinish()):
-            reward = 1
-          else:
-            encodestate = encode_state(expand_node.state, self.args['feature_size'])
-            input_value = torch.FloatTensor(np.array(encodestate).astype(np.float64))
-            reward = float(self.value_model(input_value))
-            
-          #############################################
-          
-          # 如果到达叶子节点(证明成功)，终止循环，开始寻找其所用到的所有策略
-
-          # 3. Update all passing nodes with reward
-          self.backup(expand_node, reward)
-
-        # N. Get the best next node
-        # best_next_node = self.best_child(node, False)
-        # return best_next_node
+        # 1. Find the best node to expand
+        # print("mcts到第{}次，node为：{}".format(i,node.state))
+        expand_node = self.tree_policy(node, True, mm, f_hyps, e_hyps, axiom_file,symbol_file, assersions,assertion_labels,symbol_dict)
         
-        return 
+        ############################################
+        if(not expand_node.flag):
+          reward = -1
+        elif(expand_node.new):
+          reward = 1
+        else:
+          encodestate = encode_state(expand_node.state, self.args['feature_size'])
+          input_value = torch.FloatTensor(np.array(encodestate).astype(np.float64))
+          reward = float(self.value_model(input_value))
+
+        # 3. Update all passing nodes with reward
+        self.backup(expand_node, reward)
+
+        if(expand_node.new): #生成了新定理
+          name = "new" + str(i)
+          path = []  #新定理所用策略
+          unused_list = expand_node.state[:-1]
+          new_node = copy.copy(expand_node)
+          while new_node.parent is not None:
+            if(new_node.state == unused_list):
+              break
+            path.append(new_node.tac)
+            new_node = new_node.parent
+          path.reverse()
+          expand_node.path = path
+          
+          new_theorem = generate_theorem(expand_node,name+str(i),assertion_labels)
+          outputs.append(new_theorem)
+          # print(new_theorem)
+          with open('out.json', 'a') as file:
+            json.dump(new_theorem, file)
+            file.write('\n')
+          # print(new_theorem)
+
+      return node,outputs
+
 
 
 # def main():

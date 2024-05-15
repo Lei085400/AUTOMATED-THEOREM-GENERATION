@@ -157,8 +157,8 @@ class Trainer:
         self.policy_train(policy_train_example)  # 每次训练样本：当前mcts树中，numEps/10条大步节点路径上所有节点
         self.value_train(value_train_example)
         # filename = self.args['checkpoint_path']
-        # self.save_checkpoint_policy(folder=".", filename="policy_model")  
-        # self.save_checkpoint_value(folder=".", filename="value_model") 
+        self.save_checkpoint_policy(folder=".", filename="policy_model")  
+        self.save_checkpoint_value(folder=".", filename="value_model") 
         return
 
     def policy_train(self, policy_examples):

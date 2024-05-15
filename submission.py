@@ -1,35 +1,17 @@
 """DO NOT rename this file!"""
 import os
 import json
-import textwrap
-import time
 from string import Template
 import os
-
 import torch
-import pickle
-import subprocess
 import mmverify
-import timeit
-import select
 import json
-# print(torch.__version__)
-from torch.nn.parallel import DataParallel  
-# torch.cuda.set_device(2)
-
-# import lean_dojo
-# from lean_dojo import *
 from model import policy_model
 from model import value_model
-print("hello,开始了")
-from trainer import Trainer
-print("hello,开始了")
 from mcts import Node
 from mcts import MCTS
-from transformers import AutoTokenizer, AutoModelForCausalLM, AutoModelForSeq2SeqLM
-from verify import anatomy
+# from verify import anatomy
 import openai
-
 from tqdm import tqdm
 
 class MyTemplate(Template):
@@ -146,10 +128,17 @@ class Submission:
 
         policyModel = policy_model(args['feature_size']*2, device)
         valueModel = value_model(args['feature_size'], device)
+    
+        checkpoint_policy = torch.load("policy_model")
+        policyModel.load_state_dict(checkpoint_policy['state_dict'])
+
+        checkpoint_value = torch.load("value_model")
+        valueModel.load_state_dict(checkpoint_value['state_dict'])
+
 
         print("hello,开始了！！")
 
-        anatomy(axiom_file,symbol_file)
+        # anatomy(axiom_file,symbol_file)
         verbosity = 30
 
         filename='Declare.mm'
@@ -163,22 +152,14 @@ class Submission:
         # 先调用一遍，初始化标签
         correct_flag,state = mm.verify_and_calculate_proof_step_normal(f_hyps,e_hyps,step,state,step_int) 
 
-        trainer = Trainer(policyModel, valueModel, args, device)
-        print("马上开始训练")
-        trainer.learn(state, mm, f_hyps, e_hyps,axiom_file,symbol_file)
-                
         
-        outputs = []
-        with open('out.json', 'r') as f:
-            for line in f:
-                # 解析 JSON 对象并添加到列表中
-                json_data = json.loads(line)
-                outputs.append(json_data)  
-        """You can either parse all known symbols and axioms and input them as prompts, 
-        or you can sample them in some way and input them to the model (like we do in self.prompt)."""
+        node = Node(state)
+        node.flag = correct_flag
 
+        print("开始搜索")
+        mcts = MCTS(node, policyModel, valueModel, args, device)
+        node,outputs = mcts.runmcts(mm, f_hyps, e_hyps, axiom_file,symbol_file)
 
-        # outputs.append(json.dumps(theorem))
 
         if not os.path.exists(self.output_file):
             os.makedirs(os.path.dirname(self.output_file), exist_ok=True)
