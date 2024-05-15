@@ -168,5 +168,3 @@ class Submission:
                 f.write(output)
                 f.write('\n')
 
-sub = Submission("output.json")
-sub.run("axioms.json","symbols.json")
