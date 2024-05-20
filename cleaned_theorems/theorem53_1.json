@@ -1,0 +1,27 @@
+[
+    {
+        "theorem": "simp-10r",
+        "type": "$p",
+        "conclusion": "|- ( ( ( ( ( ( ( ( ( ( ( ph /\\ ps ) /\\ ch ) /\\ th ) /\\ ta ) /\\ et ) /\\ ze ) /\\ si ) /\\ rh ) /\\ mu ) /\\ la ) -> ps )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch",
+            "wff th",
+            "wff ta",
+            "wff et",
+            "wff ze",
+            "wff si",
+            "wff rh",
+            "wff mu",
+            "wff la"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wps wps wph wch wth wta wet wze wsi wrh wmu wla wps id ad10antlr",
+        "references": [
+            "ad10antlr",
+            "id"
+        ]
+    }
+]

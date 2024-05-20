@@ -225,8 +225,8 @@ def new_theorem(node, mm, assersions,assertion_labels,symbol_dict):
   if node.tac in assertion_labels:
     if(node.parent is None or node.flag == False):
       return False
-    elif(len(node.state) == 1 + len(node.parent.state)):
-      return False   #未生成新定理
+    # elif(len(node.state) == 1 + len(node.parent.state)):
+    #   return False   #未生成新定理
     else:
       # return True
       new_conclusion = node.state[-1]

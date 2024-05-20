@@ -1,0 +1,966 @@
+[
+    {
+        "theorem": "impbid",
+        "type": "$p",
+        "conclusion": "|- ( ph -> ( ps <-> ch ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch"
+        ],
+        "e_hypos": [
+            "|- ( ph -> ( ps -> ch ) )",
+            "|- ( ph -> ( ch -> ps ) )"
+        ],
+        "proof_steps": "wph wps wch wb wph wph wps wch impbid.1 impbid.2 impbid21d pm2.43i",
+        "references": [
+            "wb",
+            "impbid21d",
+            "pm2.43i"
+        ]
+    },
+    {
+        "theorem": "biimpr",
+        "type": "$p",
+        "conclusion": "|- ( ( ph <-> ps ) -> ( ps -> ph ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wps wb wph wps wi wps wph wi wn wi wn wps wph wi wph wps dfbi1 wph wps wi wps wph wi simprim sylbi",
+        "references": [
+            "wb",
+            "simprim",
+            "dfbi1",
+            "sylbi",
+            "wi",
+            "wn"
+        ]
+    },
+    {
+        "theorem": "biid",
+        "type": "$p",
+        "conclusion": "|- ( ph <-> ph )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wph wph id wph id impbii",
+        "references": [
+            "id",
+            "impbii"
+        ]
+    },
+    {
+        "theorem": "pm5.1im",
+        "type": "$p",
+        "conclusion": "|- ( ph -> ( ps -> ( ph <-> ps ) ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wps wph wps wps wph ax-1 wph wps ax-1 impbid21d",
+        "references": [
+            "ax-1",
+            "impbid21d"
+        ]
+    },
+    {
+        "theorem": "2th",
+        "type": "$p",
+        "conclusion": "|- ( ph <-> ps )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps"
+        ],
+        "e_hypos": [
+            "|- ph",
+            "|- ps"
+        ],
+        "proof_steps": "wph wps wps wph 2th.2 a1i wph wps 2th.1 a1i impbii",
+        "references": [
+            "impbii",
+            "a1i"
+        ]
+    },
+    {
+        "theorem": "notnotb",
+        "type": "$p",
+        "conclusion": "|- ( ph <-> -. -. ph )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wph wn wn wph notnot wph notnotr impbii",
+        "references": [
+            "notnot",
+            "impbii",
+            "notnotr",
+            "wn"
+        ]
+    },
+    {
+        "theorem": "con34b",
+        "type": "$p",
+        "conclusion": "|- ( ( ph -> ps ) <-> ( -. ps -> -. ph ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wps wi wps wn wph wn wi wph wps con3 wps wph con4 impbii",
+        "references": [
+            "impbii",
+            "con3",
+            "wi",
+            "con4",
+            "wn"
+        ]
+    },
+    {
+        "theorem": "mtbiri",
+        "type": "$p",
+        "conclusion": "|- ( ph -> -. ps )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch"
+        ],
+        "e_hypos": [
+            "|- -. ch",
+            "|- ( ph -> ( ps <-> ch ) )"
+        ],
+        "proof_steps": "wph wps wch mtbiri.min wph wps wch mtbiri.maj biimpd mtoi",
+        "references": [
+            "mtoi",
+            "biimpd"
+        ]
+    },
+    {
+        "theorem": "con1b",
+        "type": "$p",
+        "conclusion": "|- ( ( -. ph -> ps ) <-> ( -. ps -> ph ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wn wps wi wps wn wph wi wph wps con1 wps wph con1 impbii",
+        "references": [
+            "con1",
+            "wn",
+            "impbii",
+            "wi"
+        ]
+    },
+    {
+        "theorem": "con2b",
+        "type": "$p",
+        "conclusion": "|- ( ( ph -> -. ps ) <-> ( ps -> -. ph ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wps wn wi wps wph wn wi wph wps con2 wps wph con2 impbii",
+        "references": [
+            "con2",
+            "impbii",
+            "wn",
+            "wi"
+        ]
+    },
+    {
+        "theorem": "bi2.04",
+        "type": "$p",
+        "conclusion": "|- ( ( ph -> ( ps -> ch ) ) <-> ( ps -> ( ph -> ch ) ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wps wch wi wi wps wph wch wi wi wph wps wch pm2.04 wps wph wch pm2.04 impbii",
+        "references": [
+            "impbii",
+            "pm2.04",
+            "wi"
+        ]
+    },
+    {
+        "theorem": "imdi",
+        "type": "$p",
+        "conclusion": "|- ( ( ph -> ( ps -> ch ) ) <-> ( ( ph -> ps ) -> ( ph -> ch ) ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wps wch wi wi wph wps wi wph wch wi wi wph wps wch ax-2 wph wps wch pm2.86 impbii",
+        "references": [
+            "pm2.86",
+            "impbii",
+            "ax-2",
+            "wi"
+        ]
+    },
+    {
+        "theorem": "pm4.8",
+        "type": "$p",
+        "conclusion": "|- ( ( ph -> -. ph ) <-> -. ph )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wph wn wi wph wn wph pm2.01 wph wn wph ax-1 impbii",
+        "references": [
+            "impbii",
+            "ax-1",
+            "wi",
+            "pm2.01",
+            "wn"
+        ]
+    },
+    {
+        "theorem": "pm4.81",
+        "type": "$p",
+        "conclusion": "|- ( ( -. ph -> ph ) <-> ph )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wn wph wi wph wph pm2.18 wph wph pm2.24 impbii",
+        "references": [
+            "impbii",
+            "wi",
+            "pm2.24",
+            "wn",
+            "pm2.18"
+        ]
+    },
+    {
+        "theorem": "imp4a",
+        "type": "$p",
+        "conclusion": "|- ( ph -> ( ps -> ( ( ch /\\ th ) -> ta ) ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch",
+            "wff th",
+            "wff ta"
+        ],
+        "e_hypos": [
+            "|- ( ph -> ( ps -> ( ch -> ( th -> ta ) ) ) )"
+        ],
+        "proof_steps": "wph wps wch wth wa wta wi wph wps wch wth wta imp4.1 imp4b ex",
+        "references": [
+            "imp",
+            "impd",
+            "wa",
+            "wi"
+        ]
+    },
+    {
+        "theorem": "imp5a",
+        "type": "$p",
+        "conclusion": "|- ( ph -> ( ps -> ( ch -> ( ( th /\\ ta ) -> et ) ) ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch",
+            "wff th",
+            "wff ta",
+            "wff et"
+        ],
+        "e_hypos": [
+            "|- ( ph -> ( ps -> ( ch -> ( th -> ( ta -> et ) ) ) ) )"
+        ],
+        "proof_steps": "wph wps wch wth wta wa wet wi wph wps wch wth wta wet imp5.1 imp5d exp31",
+        "references": [
+            "imp31",
+            "impd",
+            "wa",
+            "wi"
+        ]
+    },
+    {
+        "theorem": "biimpac",
+        "type": "$p",
+        "conclusion": "|- ( ( ps /\\ ph ) -> ch )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch"
+        ],
+        "e_hypos": [
+            "|- ( ph -> ( ps <-> ch ) )"
+        ],
+        "proof_steps": "wps wph wch wph wps wch biimpa.1 biimpcd imp",
+        "references": [
+            "imp",
+            "biimpd"
+        ]
+    },
+    {
+        "theorem": "simpli",
+        "type": "$p",
+        "conclusion": "|- ph",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps"
+        ],
+        "e_hypos": [
+            "|- ( ph /\\ ps )"
+        ],
+        "proof_steps": "wph wps wa wph simpli.1 wph wps simpl ax-mp",
+        "references": [
+            "simpl",
+            "ax-mp",
+            "wa"
+        ]
+    },
+    {
+        "theorem": "adantrd",
+        "type": "$p",
+        "conclusion": "|- ( ph -> ( ( ps /\\ th ) -> ch ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch",
+            "wff th"
+        ],
+        "e_hypos": [
+            "|- ( ph -> ( ps -> ch ) )"
+        ],
+        "proof_steps": "wps wth wa wps wph wch wps wth simpl adantrd.1 syl5",
+        "references": [
+            "simpl",
+            "syl5",
+            "wa"
+        ]
+    },
+    {
+        "theorem": "pm3.41",
+        "type": "$p",
+        "conclusion": "|- ( ( ph -> ch ) -> ( ( ph /\\ ps ) -> ch ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wps wa wph wch wph wps simpl imim1i",
+        "references": [
+            "simpl",
+            "wa",
+            "imim1i"
+        ]
+    },
+    {
+        "theorem": "simpld",
+        "type": "$p",
+        "conclusion": "|- ( ph -> ps )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch"
+        ],
+        "e_hypos": [
+            "|- ( ph -> ( ps /\\ ch ) )"
+        ],
+        "proof_steps": "wph wps wch wa wps simpld.1 wps wch simpl syl",
+        "references": [
+            "simpl",
+            "syl",
+            "wa"
+        ]
+    },
+    {
+        "theorem": "anabsi5",
+        "type": "$p",
+        "conclusion": "|- ( ( ph /\\ ps ) -> ch )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch"
+        ],
+        "e_hypos": [
+            "|- ( ph -> ( ( ph /\\ ps ) -> ch ) )"
+        ],
+        "proof_steps": "wph wph wps wa wch wph wps simpl anabsi5.1 mpcom",
+        "references": [
+            "simpl",
+            "wa",
+            "mpcom"
+        ]
+    },
+    {
+        "theorem": "pm2.62",
+        "type": "$p",
+        "conclusion": "|- ( ( ph \\/ ps ) -> ( ( ph -> ps ) -> ps ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wps wi wph wps wo wps wph wps pm2.621 com12",
+        "references": [
+            "com12",
+            "wo",
+            "pm2.621",
+            "wi"
+        ]
+    },
+    {
+        "theorem": "pm2.64",
+        "type": "$p",
+        "conclusion": "|- ( ( ph \\/ ps ) -> ( ( ph \\/ -. ps ) -> ph ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wps wn wo wph wps wo wph wph wps wn wph wps wo wps wph orel2 jao1i com12",
+        "references": [
+            "wo",
+            "orel2",
+            "jao1i",
+            "com12",
+            "wn"
+        ]
+    },
+    {
+        "theorem": "3imp31",
+        "type": "$p",
+        "conclusion": "|- ( ( ch /\\ ps /\\ ph ) -> th )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch",
+            "wff th"
+        ],
+        "e_hypos": [
+            "|- ( ph -> ( ps -> ( ch -> th ) ) )"
+        ],
+        "proof_steps": "wch wps wph wth wph wps wch wth 3imp.1 com13 3imp",
+        "references": [
+            "imp31",
+            "3impa"
+        ]
+    },
+    {
+        "theorem": "3imp1",
+        "type": "$p",
+        "conclusion": "|- ( ( ( ph /\\ ps /\\ ch ) /\\ th ) -> ta )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch",
+            "wff th",
+            "wff ta"
+        ],
+        "e_hypos": [
+            "|- ( ph -> ( ps -> ( ch -> ( th -> ta ) ) ) )"
+        ],
+        "proof_steps": "wph wps wch w3a wth wta wph wps wch wth wta wi 3imp1.1 3imp imp",
+        "references": [
+            "w3a",
+            "3imp",
+            "imp",
+            "wi"
+        ]
+    },
+    {
+        "theorem": "biimp3ar",
+        "type": "$p",
+        "conclusion": "|- ( ( ph /\\ ps /\\ th ) -> ch )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch",
+            "wff th"
+        ],
+        "e_hypos": [
+            "|- ( ( ph /\\ ps ) -> ( ch <-> th ) )"
+        ],
+        "proof_steps": "wph wps wth wch wph wps wch wth biimp3a.1 exbiri 3imp",
+        "references": [
+            "biimpa",
+            "wa",
+            "3impa"
+        ]
+    },
+    {
+        "theorem": "impsingle-ax1",
+        "type": "$p",
+        "conclusion": "|- ( ph -> ( ps -> ph ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wch wps wi wph wi wps wph wi wi wph wps wph wi wi wch wps wph impsingle-step8 wch wps wi wph wps wph wi impsingle-step8 ax-mp",
+        "references": [
+            "impsingle-step8",
+            "wch",
+            "ax-mp",
+            "wi"
+        ]
+    },
+    {
+        "theorem": "impsingle-step15",
+        "type": "$p",
+        "conclusion": "|- ( ( ( ph -> ps ) -> ( ch -> th ) ) -> ( ( ph -> th ) -> ( ch -> th ) ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch",
+            "wff th"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wth wla wi wph wi wph wth wi wch wth wi wi wi wph wps wi wch wth wi wi wph wth wi wch wth wi wi wi wth wla wph wch impsingle wta wsi wi wrh wi wrh wta wi wmu wta wi wi wi wth wla wi wph wi wph wth wi wch wth wi wi wi wph wps wi wch wth wi wi wph wth wi wch wth wi wi wi wi wta wsi wrh wmu impsingle wph wth wi wch wth wi wi wet wi wth wla wi wph wi wi wth wla wi wph wi wph wth wi wch wth wi wi wi wph wps wi wch wth wi wi wph wth wi wch wth wi wi wi wi wi wta wsi wi wrh wi wrh wta wi wmu wta wi wi wi wth wla wi wph wi wph wth wi wch wth wi wi wi wph wps wi wch wth wi wi wph wth wi wch wth wi wi wi wi wi wph wth wi wch wth wi wi wet wth wla wi wph wi wph wps wi wch wth wi wi impsingle wth wla wi wph wi wph wth wi wch wth wi wi wi wph wps wi wch wth wi wi wph wth wi wch wth wi wi wi wi wth wla wi wph wi wi wph wth wi wch wth wi wi wet wi wth wla wi wph wi wi wi wph wth wi wch wth wi wi wet wi wth wla wi wph wi wi wth wla wi wph wi wph wth wi wch wth wi wi wi wph wps wi wch wth wi wi wph wth wi wch wth wi wi wi wi wi wta wsi wi wrh wi wrh wta wi wmu wta wi wi wi wth wla wi wph wi wph wth wi wch wth wi wi wi wph wps wi wch wth wi wi wph wth wi wch wth wi wi wi wi wi wi wth wla wi wph wi wph wps wi wch wth wi wi wph wth wi wch wth wi wi wi wi wth wla wi wph wi wph wth wi wch wth wi wi wi wph wps wi wch wth wi wi wph wth wi wch wth wi wi wi wi wi wth wla wi wph wi wph wth wi wch wth wi wi wi wph wps wi wch wth wi wi wph wth wi wch wth wi wi wi wi wth wla wi wph wi wi wph wth wi wch wth wi wi wet wi wth wla wi wph wi wi wi wph wps wi wch wth wi wi wph wth wi wch wth wi wi wi wph wi wth wla wi wph wi wi wth wla wi wph wi wph wps wi wch wth wi wi wph wth wi wch wth wi wi wi wi wth wla wi wph wi wph wth wi wch wth wi wi wi wph wps wi wch wth wi wi wph wth wi wch wth wi wi wi wi wi wph wps wi wph wps wi wch wth wi wi wph wth wi wch wth wi wi wi wi wph wps wi wch wth wi wi wph wth wi wch wth wi wi wi wph wi wth wla wi wph wi wi wch wth wi wze wi wph wps wi wi wph wps wi wch wth wi wi wph wth wi wch wth wi wi wi wi wph wps wi wph wps wi wch wth wi wi wph wth wi wch wth wi wi wi wi wch wth wi wze wph wps wi wph wth wi impsingle wch wth wi wze wi wph wps wi wph wps wi wch wth wi wi wph wth wi wch wth wi wi wi impsingle-step8 ax-mp wph wps wph wps wi wch wth wi wi wph wth wi wch wth wi wi wi wth wla wi impsingle ax-mp wph wps wi wch wth wi wi wph wth wi wch wth wi wi wi wph wth wla wi wph wi wth wla wi wph wi wph wth wi wch wth wi wi wi impsingle ax-mp wth wla wi wph wi wph wps wi wch wth wi wi wph wth wi wch wth wi wi wi wth wla wi wph wi wph wth wi wch wth wi wi wi wph wps wi wch wth wi wi wph wth wi wch wth wi wi wi wi wph wth wi wch wth wi wi wet wi impsingle ax-mp wth wla wi wph wi wph wth wi wch wth wi wi wi wph wps wi wch wth wi wi wph wth wi wch wth wi wi wi wi wth wla wi wph wi wph wth wi wch wth wi wi wet wi wth wla wi wph wi wi wta wsi wi wrh wi wrh wta wi wmu wta wi wi wi impsingle ax-mp ax-mp ax-mp ax-mp",
+        "references": [
+            "wla",
+            "wrh",
+            "wmu",
+            "wze",
+            "ax-mp",
+            "wi",
+            "impsingle-step8",
+            "impsingle",
+            "wet",
+            "wta",
+            "wsi"
+        ]
+    },
+    {
+        "theorem": "impsingle-step22",
+        "type": "$p",
+        "conclusion": "|- ( ph -> ph )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wth wmu wi wth wi wla wth wi wi wph wph wi wth wmu wla impsingle-step4 wph wps wi wph wi wph wph wi wi wth wmu wi wth wi wla wth wi wi wph wph wi wi wph wps wph impsingle-step4 wph wph wi wph wi wph wps wi wph wi wi wph wps wi wph wi wph wph wi wi wth wmu wi wth wi wla wth wi wi wph wph wi wi wi wph wph wph wps wi impsingle-step4 wph wph wi wph wph wps wi wph wi wth wmu wi wth wi wla wth wi wi impsingle ax-mp ax-mp ax-mp",
+        "references": [
+            "wth",
+            "impsingle-step4",
+            "wla",
+            "wmu",
+            "wps",
+            "wi",
+            "impsingle",
+            "ax-mp"
+        ]
+    },
+    {
+        "theorem": "merlem3",
+        "type": "$p",
+        "conclusion": "|- ( ( ( ps -> ch ) -> ph ) -> ( ch -> ph ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wph wi wch wn wch wn wi wi wch wi wps wch wi wi wps wch wi wph wi wch wph wi wi wch wph wi wps wn wps wn wi wi wps wi wph wph wi wch wn wch wn wi wi wi wph wph wi wch wn wch wn wi wi wch wi wps wch wi wi wch wn wch wn wi wch wn wch wn wi wi wph wph wi wch wn wch wn wi wi wi wch wph wi wps wn wps wn wi wi wps wi wph wph wi wch wn wch wn wi wi wi wch wn wch wn wch wn wi wph wph wi merlem2 wch wn wch wn wi wph wph wi wch wn wch wn wi wi wch wph wi wps wn wps wn wi wi wps wi merlem2 ax-mp wch wph wps wps wph wph wi wch wn wch wn wi wi meredith ax-mp wph wph wch wch wps wch wi meredith ax-mp",
+        "references": [
+            "meredith",
+            "merlem2",
+            "wi",
+            "wn",
+            "ax-mp"
+        ]
+    },
+    {
+        "theorem": "axia1",
+        "type": "$p",
+        "conclusion": "|- ( ( ph /\\ ps ) -> ph )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wps simpl",
+        "references": [
+            "simpl"
+        ]
+    },
+    {
+        "theorem": "3orel3",
+        "type": "$p",
+        "conclusion": "|- ( -. ch -> ( ( ph \\/ ps \\/ ch ) -> ( ph \\/ ps ) ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wps wch w3o wph wps wo wch wo wch wn wph wps wo wph wps wch df-3or wch wph wps wo orel2 syl5bi",
+        "references": [
+            "wo",
+            "orel2",
+            "w3o",
+            "syl5bi",
+            "df-3or",
+            "wn"
+        ]
+    },
+    {
+        "theorem": "jath",
+        "type": "$p",
+        "conclusion": "|- ( ( -. ph -> ch ) -> ( ( ps -> ch ) -> ( ( ph -> ps ) -> ch ) ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wph wn wch wi wps wch wi wph wps wi wch wi wi wi wph wn wch wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wi wph wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wph wn wch wn wph wn wch wi wn wi wi wph wn wch wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wi wph wn wch mth8 wch wn wph wn wch wi wn wi wch wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wi wph wn wch wn wph wn wch wi wn wi wi wph wn wch wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wi wi wph wn wch wi wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wch wn wph wn wch wi wn wi wch wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wi wph wn wch wi wps wch wi wph wps wi wch wi wi pm2.21 wph wn wch wi wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wch wn imim2 ax-mp wch wn wph wn wch wi wn wi wch wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wph wn imim2 ax-mp ax-mp wch wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wph wn wch wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wi wph wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wi wch wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wch wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wch wps wch wi wph wps wi wch wi wi wi wch wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wch wph wps wi wch wi wi wch wps wch wi wph wps wi wch wi wi wi wch wph wps wi ax-1 wph wps wi wch wi wps wch wi wph wps wi wch wi wi wi wch wph wps wi wch wi wi wch wps wch wi wph wps wi wch wi wi wi wi wph wps wi wch wi wps wch wi ax-1 wph wps wi wch wi wps wch wi wph wps wi wch wi wi wch imim2 ax-mp ax-mp wps wch wi wph wps wi wch wi wi wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wch wps wch wi wph wps wi wch wi wi wi wch wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wi wps wch wi wph wps wi wch wi wi wph wn wch wi ax-1 wps wch wi wph wps wi wch wi wi wph wn wch wi wps wch wi wph wps wi wch wi wi wi wch imim2 ax-mp ax-mp wch wph wn wch wi wps wch wi wph wps wi wch wi wi wi pm2.61 ax-mp wch wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wph wn wch wi wps wch wi wph wps wi wch wi wi wi wph wn imim2 ax-mp ax-mp wph wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wph wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wph wps wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wi wph wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wph wps wn wps wch wi wph wps wi wch wi wi wi wi wph wps wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wi wph wps wn wph wps wi wch wi wi wi wph wps wn wps wch wi wph wps wi wch wi wi wi wi wph wps wn wph wps wi wn wi wi wph wps wn wph wps wi wch wi wi wi wph wps mth8 wps wn wph wps wi wn wi wps wn wph wps wi wch wi wi wi wph wps wn wph wps wi wn wi wi wph wps wn wph wps wi wch wi wi wi wi wph wps wi wn wph wps wi wch wi wi wps wn wph wps wi wn wi wps wn wph wps wi wch wi wi wi wph wps wi wch pm2.21 wph wps wi wn wph wps wi wch wi wps wn imim2 ax-mp wps wn wph wps wi wn wi wps wn wph wps wi wch wi wi wph imim2 ax-mp ax-mp wps wn wph wps wi wch wi wi wps wn wps wch wi wph wps wi wch wi wi wi wi wph wps wn wph wps wi wch wi wi wi wph wps wn wps wch wi wph wps wi wch wi wi wi wi wi wph wps wi wch wi wps wch wi wph wps wi wch wi wi wi wps wn wph wps wi wch wi wi wps wn wps wch wi wph wps wi wch wi wi wi wi wph wps wi wch wi wps wch wi ax-1 wph wps wi wch wi wps wch wi wph wps wi wch wi wi wps wn imim2 ax-mp wps wn wph wps wi wch wi wi wps wn wps wch wi wph wps wi wch wi wi wi wph imim2 ax-mp ax-mp wps wn wps wch wi wph wps wi wch wi wi wi wps wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wi wph wps wn wps wch wi wph wps wi wch wi wi wi wi wph wps wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wi wi wps wch wi wph wps wi wch wi wi wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wps wn wps wch wi wph wps wi wch wi wi wi wps wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wi wps wch wi wph wps wi wch wi wi wph wn wch wi ax-1 wps wch wi wph wps wi wch wi wi wph wn wch wi wps wch wi wph wps wi wch wi wi wi wps wn imim2 ax-mp wps wn wps wch wi wph wps wi wch wi wi wi wps wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wph imim2 ax-mp ax-mp wps wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wph wps wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wi wph wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wi wps wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wps wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wps wch wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wi wps wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wps wch wn wps wch wi wph wps wi wch wi wi wi wi wps wch wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wi wps wch wn wps wch wi wn wi wi wps wch wn wps wch wi wph wps wi wch wi wi wi wi wps wch mth8 wch wn wps wch wi wn wi wch wn wps wch wi wph wps wi wch wi wi wi wi wps wch wn wps wch wi wn wi wi wps wch wn wps wch wi wph wps wi wch wi wi wi wi wi wps wch wi wn wps wch wi wph wps wi wch wi wi wi wch wn wps wch wi wn wi wch wn wps wch wi wph wps wi wch wi wi wi wi wps wch wi wph wps wi wch wi pm2.21 wps wch wi wn wps wch wi wph wps wi wch wi wi wch wn imim2 ax-mp wch wn wps wch wi wn wi wch wn wps wch wi wph wps wi wch wi wi wi wps imim2 ax-mp ax-mp wch wn wps wch wi wph wps wi wch wi wi wi wch wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wi wps wch wn wps wch wi wph wps wi wch wi wi wi wi wps wch wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wi wi wps wch wi wph wps wi wch wi wi wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wch wn wps wch wi wph wps wi wch wi wi wi wch wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wi wps wch wi wph wps wi wch wi wi wph wn wch wi ax-1 wps wch wi wph wps wi wch wi wi wph wn wch wi wps wch wi wph wps wi wch wi wi wi wch wn imim2 ax-mp wch wn wps wch wi wph wps wi wch wi wi wi wch wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wps imim2 ax-mp ax-mp wch wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wps wch wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wi wps wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wi wch wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wch wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wch wps wch wi wph wps wi wch wi wi wi wch wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wch wph wps wi wch wi wi wch wps wch wi wph wps wi wch wi wi wi wch wph wps wi ax-1 wph wps wi wch wi wps wch wi wph wps wi wch wi wi wi wch wph wps wi wch wi wi wch wps wch wi wph wps wi wch wi wi wi wi wph wps wi wch wi wps wch wi ax-1 wph wps wi wch wi wps wch wi wph wps wi wch wi wi wch imim2 ax-mp ax-mp wps wch wi wph wps wi wch wi wi wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wch wps wch wi wph wps wi wch wi wi wi wch wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wi wps wch wi wph wps wi wch wi wi wph wn wch wi ax-1 wps wch wi wph wps wi wch wi wi wph wn wch wi wps wch wi wph wps wi wch wi wi wi wch imim2 ax-mp ax-mp wch wph wn wch wi wps wch wi wph wps wi wch wi wi wi pm2.61 ax-mp wch wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wph wn wch wi wps wch wi wph wps wi wch wi wi wi wps imim2 ax-mp ax-mp wps wph wn wch wi wps wch wi wph wps wi wch wi wi wi pm2.61 ax-mp wps wn wph wn wch wi wps wch wi wph wps wi wch wi wi wi wi wph wn wch wi wps wch wi wph wps wi wch wi wi wi wph imim2 ax-mp ax-mp wph wph wn wch wi wps wch wi wph wps wi wch wi wi wi pm2.61 ax-mp ax-mp",
+        "references": [
+            "pm2.61",
+            "ax-1",
+            "pm2.21",
+            "imim2",
+            "wi",
+            "wn",
+            "ax-mp",
+            "mth8"
+        ]
+    },
+    {
+        "theorem": "imp5p",
+        "type": "$p",
+        "conclusion": "|- ( ph -> ( ps -> ( ( ch /\\ th /\\ ta ) -> et ) ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch",
+            "wff th",
+            "wff ta",
+            "wff et"
+        ],
+        "e_hypos": [
+            "|- ( ph -> ( ps -> ( ch -> ( th -> ( ta -> et ) ) ) ) )"
+        ],
+        "proof_steps": "wch wth wta w3a wph wps wet wch wth wta wph wps wet wi wi wph wps wch wth wta wet 3imp5.1 com52l 3imp com3l",
+        "references": [
+            "w3a",
+            "com3l",
+            "com52l",
+            "3imp",
+            "wi"
+        ]
+    },
+    {
+        "theorem": "re1ax2",
+        "type": "$p",
+        "conclusion": "|- ( ( ph -> ( ps -> ch ) ) -> ( ( ph -> ps ) -> ( ph -> ch ) ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wps wch wi wi wps wph wch wi wi wph wps wi wph wch wi wi wph wps wch re1ax2lem wph wph wch wi wi wph wch wi wi wps wph wch wi wi wph wps wi wph wph wch wi wi wi wph wps wi wph wch wi wi wph wph wch wi wi wph wch wi wch wi wph wch wi wi wph wch wi wph wph wch wi wch tb-ax1 wph wch wi wch tb-ax3 tbsyl wph wps wi wps wph wch wi wi wph wph wch wi wi wi wi wps wph wch wi wi wph wps wi wph wph wch wi wi wi wi wph wps wph wch wi tb-ax1 wph wps wi wps wph wch wi wi wph wph wch wi wi re1ax2lem ax-mp wph wps wi wph wph wch wi wi wi wph wph wch wi wi wph wch wi wi wph wps wi wph wch wi wi wi wi wph wph wch wi wi wph wch wi wi wph wps wi wph wph wch wi wi wi wph wps wi wph wch wi wi wi wi wph wps wi wph wph wch wi wi wph wch wi tb-ax1 wph wps wi wph wph wch wi wi wi wph wph wch wi wi wph wch wi wi wph wps wi wph wch wi wi re1ax2lem ax-mp mpsyl tbsyl",
+        "references": [
+            "tbsyl",
+            "tb-ax3",
+            "mpsyl",
+            "wi",
+            "re1ax2lem",
+            "ax-mp",
+            "tb-ax1"
+        ]
+    },
+    {
+        "theorem": "bj-looinvii",
+        "type": "$p",
+        "conclusion": "|- ph",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps"
+        ],
+        "e_hypos": [
+            "|- ( ( ph -> ps ) -> ps )",
+            "|- ( ps -> ph )"
+        ],
+        "proof_steps": "wps wph wi wph bj-looinvii.2 wph wps bj-looinvii.1 bj-looinvi ax-mp",
+        "references": [
+            "bj-looinvi",
+            "ax-mp",
+            "wi"
+        ]
+    },
+    {
+        "theorem": "bj-bijust0ALT",
+        "type": "$p",
+        "conclusion": "|- -. ( ( ph -> ph ) -> -. ( ph -> ph ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wph wi wph id bj-nimni",
+        "references": [
+            "id",
+            "bj-nimni",
+            "wi"
+        ]
+    },
+    {
+        "theorem": "bi123impia",
+        "type": "$p",
+        "conclusion": "|- ( ( ph /\\ ps /\\ ch ) -> th )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch",
+            "wff th"
+        ],
+        "e_hypos": [
+            "|- ( ( ph /\\ ps ) <-> ( ch <-> th ) )"
+        ],
+        "proof_steps": "wph wps wch wth wph wps wa wch wth wb bi123impia.1 biimpi biimp3a",
+        "references": [
+            "wb",
+            "wa",
+            "biimpi",
+            "biimp3a"
+        ]
+    },
+    {
+        "theorem": "bi33imp12",
+        "type": "$p",
+        "conclusion": "|- ( ( ph /\\ ps /\\ ch ) -> th )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch",
+            "wff th"
+        ],
+        "e_hypos": [
+            "|- ( ph -> ( ps -> ( ch <-> th ) ) )"
+        ],
+        "proof_steps": "wph wps wch wth wph wps wch wth wb wch wth wi bi33imp12.1 wch wth biimp syl6 3imp",
+        "references": [
+            "syl6",
+            "3imp",
+            "wb",
+            "wi",
+            "biimp"
+        ]
+    },
+    {
+        "theorem": "bi23imp13",
+        "type": "$p",
+        "conclusion": "|- ( ( ph /\\ ps /\\ ch ) -> th )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch",
+            "wff th"
+        ],
+        "e_hypos": [
+            "|- ( ph -> ( ps <-> ( ch -> th ) ) )"
+        ],
+        "proof_steps": "wph wps wch wth wph wps wch wth wi bi23imp13.1 biimpd 3imp",
+        "references": [
+            "3imp",
+            "biimpd",
+            "wi"
+        ]
+    },
+    {
+        "theorem": "bi13imp23",
+        "type": "$p",
+        "conclusion": "|- ( ( ph /\\ ps /\\ ch ) -> th )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch",
+            "wff th"
+        ],
+        "e_hypos": [
+            "|- ( ph <-> ( ps -> ( ch -> th ) ) )"
+        ],
+        "proof_steps": "wph wps wch wth wph wps wch wth wi wi bi13imp23.1 biimpi 3imp",
+        "references": [
+            "3imp",
+            "biimpi",
+            "wi"
+        ]
+    },
+    {
+        "theorem": "bi23imp1",
+        "type": "$p",
+        "conclusion": "|- ( ( ph /\\ ps /\\ ch ) -> th )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch",
+            "wff th"
+        ],
+        "e_hypos": [
+            "|- ( ph -> ( ps <-> ( ch <-> th ) ) )"
+        ],
+        "proof_steps": "wph wps wch wth wph wps wch wth wb wch wth wi bi23imp1.1 wch wth biimp syl6bi 3imp",
+        "references": [
+            "3imp",
+            "wb",
+            "syl6bi",
+            "wi",
+            "biimp"
+        ]
+    },
+    {
+        "theorem": "bi123imp0",
+        "type": "$p",
+        "conclusion": "|- ( ( ph /\\ ps /\\ ch ) -> th )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch",
+            "wff th"
+        ],
+        "e_hypos": [
+            "|- ( ph <-> ( ps <-> ( ch <-> th ) ) )"
+        ],
+        "proof_steps": "wph wps wch wth wph wps wch wth wb wb wps wch wth wi wi bi23imp0.1 wps wch wth wb wb wps wch wth wb wch wth wi wps wch wth wb biimp wch wth biimp syl6 sylbi 3imp",
+        "references": [
+            "syl6",
+            "3imp",
+            "wb",
+            "sylbi",
+            "wi",
+            "biimp"
+        ]
+    },
+    {
+        "theorem": "com3rgbi",
+        "type": "$p",
+        "conclusion": "|- ( ( ph -> ( ps -> ( ch -> th ) ) ) <-> ( ch -> ( ph -> ( ps -> th ) ) ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch",
+            "wff th"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wps wch wth wi wi wi wch wph wps wth wi wi wi wph wps wch wth wi wi wi wps wph wch wth wph wps wch wth wi pm2.04 com24 wch wph wps wth wi wi wi wph wch wps wth wch wph wps wth wi pm2.04 com34 impbii",
+        "references": [
+            "impbii",
+            "pm2.04",
+            "com24",
+            "com34",
+            "wi"
+        ]
+    },
+    {
+        "theorem": "pm2.43cbi",
+        "type": "$p",
+        "conclusion": "|- ( ( ph -> ( ps -> ( ch -> ( ph -> th ) ) ) ) <-> ( ps -> ( ch -> ( ph -> th ) ) ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch",
+            "wff th"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wps wch wph wth wi wi wi wi wps wch wph wth wi wi wi wph wps wch wph wth wi wi wi wps wch wph wth wi wi wi wph wph wn wps wch wth wph wps wch wth wi wi pm2.24 com4l wps wch wph wth wi wi wi id ja wps wch wph wth wi wi wi wph ax-1 impbii",
+        "references": [
+            "impbii",
+            "id",
+            "ax-1",
+            "com4l",
+            "wi",
+            "pm2.24",
+            "wn",
+            "ja"
+        ]
+    },
+    {
+        "theorem": "adh-minim-idALT",
+        "type": "$p",
+        "conclusion": "|- ( ph -> ph )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wps wph wi wi wph wph wi wph wps adh-minim-ax1 wph wps wph wi wph wi wi wph wps wph wi wi wph wph wi wi wph wps wph wi adh-minim-ax1 wph wps wph wi wph adh-minim-ax2 ax-mp ax-mp",
+        "references": [
+            "adh-minim-ax1",
+            "adh-minim-ax2",
+            "wps",
+            "wi",
+            "ax-mp"
+        ]
+    },
+    {
+        "theorem": "adh-minim-pm2.43",
+        "type": "$p",
+        "conclusion": "|- ( ( ph -> ( ph -> ps ) ) -> ( ph -> ps ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wph wps wi wi wph wph wi wi wph wph wps wi wi wph wps wi wi wph wph wps wi wph wi wi wph wph wps wi wi wph wph wi wi wph wph wps wi adh-minim-ax1 wph wph wps wi wph adh-minim-ax2 ax-mp wph wph wps wi wi wph wph wi wph wps wi wi wi wph wph wps wi wi wph wph wi wi wph wph wps wi wi wph wps wi wi wi wph wph wps adh-minim-ax2 wph wph wps wi wi wph wph wi wph wps wi adh-minim-ax2 ax-mp ax-mp",
+        "references": [
+            "ax-mp",
+            "adh-minim-ax1",
+            "adh-minim-ax2",
+            "wi"
+        ]
+    }
+]

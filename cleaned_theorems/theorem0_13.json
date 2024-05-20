@@ -1,0 +1,236 @@
+[
+    {
+        "theorem": "mp2",
+        "type": "$p",
+        "conclusion": "|- ch",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch"
+        ],
+        "e_hypos": [
+            "|- ph",
+            "|- ps",
+            "|- ( ph -> ( ps -> ch ) )"
+        ],
+        "proof_steps": "wps wch mp2.2 wph wps wch wi mp2.1 mp2.3 ax-mp ax-mp",
+        "references": [
+            "ax-mp",
+            "wi"
+        ]
+    },
+    {
+        "theorem": "mp2b",
+        "type": "$p",
+        "conclusion": "|- ch",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch"
+        ],
+        "e_hypos": [
+            "|- ph",
+            "|- ( ph -> ps )",
+            "|- ( ps -> ch )"
+        ],
+        "proof_steps": "wps wch wph wps mp2b.1 mp2b.2 ax-mp mp2b.3 ax-mp",
+        "references": [
+            "ax-mp"
+        ]
+    },
+    {
+        "theorem": "a1i",
+        "type": "$p",
+        "conclusion": "|- ( ps -> ph )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps"
+        ],
+        "e_hypos": [
+            "|- ph"
+        ],
+        "proof_steps": "wph wps wph wi a1i.1 wph wps ax-1 ax-mp",
+        "references": [
+            "ax-1",
+            "ax-mp",
+            "wi"
+        ]
+    },
+    {
+        "theorem": "a2i",
+        "type": "$p",
+        "conclusion": "|- ( ( ph -> ps ) -> ( ph -> ch ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch"
+        ],
+        "e_hypos": [
+            "|- ( ph -> ( ps -> ch ) )"
+        ],
+        "proof_steps": "wph wps wch wi wi wph wps wi wph wch wi wi a2i.1 wph wps wch ax-2 ax-mp",
+        "references": [
+            "ax-2",
+            "ax-mp",
+            "wi"
+        ]
+    },
+    {
+        "theorem": "idALT",
+        "type": "$p",
+        "conclusion": "|- ( ph -> ph )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wph wph wi wi wph wph wi wph wph ax-1 wph wph wph wi wph wi wi wph wph wph wi wi wph wph wi wi wph wph wph wi ax-1 wph wph wph wi wph ax-2 ax-mp ax-mp",
+        "references": [
+            "ax-1",
+            "ax-2",
+            "ax-mp",
+            "wi"
+        ]
+    },
+    {
+        "theorem": "con4",
+        "type": "$p",
+        "conclusion": "|- ( ( -. ph -> -. ps ) -> ( ps -> ph ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wps ax-3",
+        "references": [
+            "ax-3"
+        ]
+    },
+    {
+        "theorem": "dfbi1ALT",
+        "type": "$p",
+        "conclusion": "|- ( ( ph <-> ps ) <-> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wph wps df-bi wch wth wch wi wi wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wi wch wth ax-1 wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wi wn wch wth wch wi wi wn wi wch wth wch wi wi wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wi wi wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wi wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wi wn wi wi wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wi wn wch wth wch wi wi wn wi wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wi ax-1 wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wi wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wi wn wi wch wth wch wi wi wn wi wi wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wi wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wi wn wi wi wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wi wn wch wth wch wi wi wn wi wi wph wps wb wph wps wi wps wph wi wn wi wn wb wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wi wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wi wn wi wch wth wch wi wi wn wi wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wi wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wi wn wi wch wth wch wi wi wn wi wi wch wth wch wi wi wn wn wph wps wb wph wps wi wps wph wi wn wi wn wb wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wi wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wi wn wi wn wi wph wps wb wph wps wi wps wph wi wn wi wn wb wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wi wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wi wn wi wch wth wch wi wi wn wi wph wps wb wph wps wi wps wph wi wn wi wn wb wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wi wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wi wn wi wn wch wth wch wi wi wn wn wph wps wb wph wps wi wps wph wi wn wi wn wb wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wi wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wi wn wi wn wi wph wps wb wph wps wi wps wph wi wn wi wn df-bi wph wps wb wph wps wi wps wph wi wn wi wn wb wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wi wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wi wn wi wn wch wth wch wi wi wn wn ax-1 ax-mp wch wth wch wi wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wi wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wi wn wi ax-3 ax-mp wph wps wb wph wps wi wps wph wi wn wi wn wb wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wi wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wi wn wi wch wth wch wi wi wn wi wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wi wn ax-1 ax-mp wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wi wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wi wn wi wch wth wch wi wi wn ax-2 ax-mp ax-mp wph wps wb wph wps wi wps wph wi wn wi wn wi wph wps wi wps wph wi wn wi wn wph wps wb wi wn wi wn wph wps wb wph wps wi wps wph wi wn wi wn wb wi wch wth wch wi wi ax-3 ax-mp ax-mp ax-mp",
+        "references": [
+            "wch",
+            "wth",
+            "ax-1",
+            "wb",
+            "ax-2",
+            "ax-3",
+            "wi",
+            "df-bi",
+            "wn",
+            "ax-mp"
+        ]
+    },
+    {
+        "theorem": "tbw-ax2",
+        "type": "$p",
+        "conclusion": "|- ( ph -> ( ps -> ph ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wps ax-1",
+        "references": [
+            "ax-1"
+        ]
+    },
+    {
+        "theorem": "weq",
+        "type": "$p",
+        "conclusion": "wff x = y",
+        "d_vars": "",
+        "f_hypos": [
+            "setvar x",
+            "setvar y"
+        ],
+        "e_hypos": [],
+        "proof_steps": "vx cv vy cv wceq",
+        "references": [
+            "wceq",
+            "cv"
+        ]
+    },
+    {
+        "theorem": "tb-ax2",
+        "type": "$p",
+        "conclusion": "|- ( ph -> ( ps -> ph ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wps ax-1",
+        "references": [
+            "ax-1"
+        ]
+    },
+    {
+        "theorem": "bj-0",
+        "type": "$p",
+        "conclusion": "wff ( ( ph -> ps ) -> ch )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wps wi wch wi",
+        "references": [
+            "wi"
+        ]
+    },
+    {
+        "theorem": "wl-impchain-mp-0",
+        "type": "$p",
+        "conclusion": "|- ph",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps"
+        ],
+        "e_hypos": [
+            "|- ps",
+            "|- ( ps -> ph )"
+        ],
+        "proof_steps": "wps wph wl-impchain-mp-0.a wl-impchain-mp-0.b ax-mp",
+        "references": [
+            "ax-mp"
+        ]
+    },
+    {
+        "theorem": "e0a",
+        "type": "$p",
+        "conclusion": "|- ps",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps"
+        ],
+        "e_hypos": [
+            "|- ph",
+            "|- ( ph -> ps )"
+        ],
+        "proof_steps": "wph wps e0a.1 e0a.2 ax-mp",
+        "references": [
+            "ax-mp"
+        ]
+    }
+]

@@ -1,0 +1,135 @@
+[
+    {
+        "theorem": "ad9antr",
+        "type": "$p",
+        "conclusion": "|- ( ( ( ( ( ( ( ( ( ( ph /\\ ch ) /\\ th ) /\\ ta ) /\\ et ) /\\ ze ) /\\ si ) /\\ rh ) /\\ mu ) /\\ la ) -> ps )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch",
+            "wff th",
+            "wff ta",
+            "wff et",
+            "wff ze",
+            "wff si",
+            "wff rh",
+            "wff mu",
+            "wff la"
+        ],
+        "e_hypos": [
+            "|- ( ph -> ps )"
+        ],
+        "proof_steps": "wph wch wa wps wth wta wet wze wsi wrh wmu wla wph wps wch ad2ant.1 adantr ad8antr",
+        "references": [
+            "adantlr",
+            "adantr"
+        ]
+    },
+    {
+        "theorem": "simp-8r",
+        "type": "$p",
+        "conclusion": "|- ( ( ( ( ( ( ( ( ( ph /\\ ps ) /\\ ch ) /\\ th ) /\\ ta ) /\\ et ) /\\ ze ) /\\ si ) /\\ rh ) -> ps )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch",
+            "wff th",
+            "wff ta",
+            "wff et",
+            "wff ze",
+            "wff si",
+            "wff rh"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wps wps wph wch wth wta wet wze wsi wrh wps id ad8antlr",
+        "references": [
+            "ad8antlr",
+            "id"
+        ]
+    },
+    {
+        "theorem": "nic-iimp2",
+        "type": "$p",
+        "conclusion": "|- ( th -/\\ ( ch -/\\ ch ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch",
+            "wff th"
+        ],
+        "e_hypos": [
+            "|- ( ( ph -/\\ ps ) -/\\ ( ch -/\\ ch ) )",
+            "|- ( th -/\\ ph )"
+        ],
+        "proof_steps": "wch wch wnan wps wph wth wch wch wnan wph wps wnan nic-iimp2.1 nic-isw1 nic-iimp2.2 nic-iimp1",
+        "references": [
+            "nic-isw1",
+            "wnan",
+            "nic-iimp1"
+        ]
+    },
+    {
+        "theorem": "nic-idbl",
+        "type": "$p",
+        "conclusion": "|- ( ( ps -/\\ ps ) -/\\ ( ( ph -/\\ ph ) -/\\ ( ph -/\\ ph ) ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps"
+        ],
+        "e_hypos": [
+            "|- ( ph -/\\ ( ps -/\\ ps ) )"
+        ],
+        "proof_steps": "wps wps wnan wph wps wnan wph wph wnan wph wps wps wps nic-idbl.1 nic-imp wph wps wps wph nic-idbl.1 nic-imp nic-ich",
+        "references": [
+            "nic-ich",
+            "nic-imp",
+            "wnan"
+        ]
+    },
+    {
+        "theorem": "nic-bi1",
+        "type": "$p",
+        "conclusion": "|- ( ph -/\\ ( ps -/\\ ps ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps"
+        ],
+        "e_hypos": [
+            "|- ( ( ph -/\\ ps ) -/\\ ( ( ph -/\\ ph ) -/\\ ( ps -/\\ ps ) ) )"
+        ],
+        "proof_steps": "wph wph wps wps wph wph wph wps wnan wps wps wnan wph wph wnan wph nic-bi1.1 wph nic-id nic-iimp1 nic-isw2 nic-idel",
+        "references": [
+            "nic-id",
+            "nic-iimp1",
+            "nic-isw2",
+            "nic-idel",
+            "wnan"
+        ]
+    },
+    {
+        "theorem": "nic-bi2",
+        "type": "$p",
+        "conclusion": "|- ( ps -/\\ ( ph -/\\ ph ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps"
+        ],
+        "e_hypos": [
+            "|- ( ( ph -/\\ ps ) -/\\ ( ( ph -/\\ ph ) -/\\ ( ps -/\\ ps ) ) )"
+        ],
+        "proof_steps": "wps wps wph wph wps wnan wph wph wnan wps wps wnan wps wps wps wnan wph wps wnan wph wph wnan nic-bi2.1 nic-isw2 wps nic-id nic-iimp1 nic-idel",
+        "references": [
+            "nic-id",
+            "nic-iimp1",
+            "nic-isw2",
+            "nic-idel",
+            "wnan"
+        ]
+    }
+]

@@ -1,0 +1,97 @@
+[
+    {
+        "theorem": "syl",
+        "type": "$p",
+        "conclusion": "|- ( ph -> ch )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch"
+        ],
+        "e_hypos": [
+            "|- ( ph -> ps )",
+            "|- ( ps -> ch )"
+        ],
+        "proof_steps": "wph wps wch syl.1 wps wch wi wph syl.2 a1i mpd",
+        "references": [
+            "a1i",
+            "mpd",
+            "wi"
+        ]
+    },
+    {
+        "theorem": "mpi",
+        "type": "$p",
+        "conclusion": "|- ( ph -> ch )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch"
+        ],
+        "e_hypos": [
+            "|- ps",
+            "|- ( ph -> ( ps -> ch ) )"
+        ],
+        "proof_steps": "wph wps wch wps wph mpi.1 a1i mpi.2 mpd",
+        "references": [
+            "a1i",
+            "mpd"
+        ]
+    },
+    {
+        "theorem": "id",
+        "type": "$p",
+        "conclusion": "|- ( ph -> ph )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wph wph wi wph wph wph ax-1 wph wph wph wi ax-1 mpd",
+        "references": [
+            "ax-1",
+            "mpd",
+            "wi"
+        ]
+    },
+    {
+        "theorem": "mt4",
+        "type": "$p",
+        "conclusion": "|- ps",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps"
+        ],
+        "e_hypos": [
+            "|- ph",
+            "|- ( -. ps -> -. ph )"
+        ],
+        "proof_steps": "wph wps mt4.1 wps wph mt4.2 con4i ax-mp",
+        "references": [
+            "con4i",
+            "ax-mp"
+        ]
+    },
+    {
+        "theorem": "pm2.21i",
+        "type": "$p",
+        "conclusion": "|- ( ph -> ps )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps"
+        ],
+        "e_hypos": [
+            "|- -. ph"
+        ],
+        "proof_steps": "wps wph wph wn wps wn pm2.21i.1 a1i con4i",
+        "references": [
+            "con4i",
+            "a1i",
+            "wn"
+        ]
+    }
+]

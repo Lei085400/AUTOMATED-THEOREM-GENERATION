@@ -1,0 +1,354 @@
+[
+    {
+        "theorem": "ad8antr",
+        "type": "$p",
+        "conclusion": "|- ( ( ( ( ( ( ( ( ( ph /\\ ch ) /\\ th ) /\\ ta ) /\\ et ) /\\ ze ) /\\ si ) /\\ rh ) /\\ mu ) -> ps )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch",
+            "wff th",
+            "wff ta",
+            "wff et",
+            "wff ze",
+            "wff si",
+            "wff rh",
+            "wff mu"
+        ],
+        "e_hypos": [
+            "|- ( ph -> ps )"
+        ],
+        "proof_steps": "wph wch wa wps wth wta wet wze wsi wrh wmu wph wps wch ad2ant.1 adantr ad7antr",
+        "references": [
+            "adantlr",
+            "adantr"
+        ]
+    },
+    {
+        "theorem": "simp-7r",
+        "type": "$p",
+        "conclusion": "|- ( ( ( ( ( ( ( ( ph /\\ ps ) /\\ ch ) /\\ th ) /\\ ta ) /\\ et ) /\\ ze ) /\\ si ) -> ps )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch",
+            "wff th",
+            "wff ta",
+            "wff et",
+            "wff ze",
+            "wff si"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wps wps wph wch wth wta wet wze wsi wps id ad7antlr",
+        "references": [
+            "ad7antlr",
+            "id"
+        ]
+    },
+    {
+        "theorem": "3impdir",
+        "type": "$p",
+        "conclusion": "|- ( ( ph /\\ ch /\\ ps ) -> th )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch",
+            "wff th"
+        ],
+        "e_hypos": [
+            "|- ( ( ( ph /\\ ps ) /\\ ( ch /\\ ps ) ) -> th )"
+        ],
+        "proof_steps": "wph wch wps wth wph wch wps wth 3impdir.1 anandirs 3impa",
+        "references": [
+            "anandirs",
+            "3impa"
+        ]
+    },
+    {
+        "theorem": "3anidm23",
+        "type": "$p",
+        "conclusion": "|- ( ( ph /\\ ps ) -> ch )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch"
+        ],
+        "e_hypos": [
+            "|- ( ( ph /\\ ps /\\ ps ) -> ch )"
+        ],
+        "proof_steps": "wph wps wch wph wps wps wch 3anidm23.1 3expa anabss3",
+        "references": [
+            "anabss3",
+            "3expa"
+        ]
+    },
+    {
+        "theorem": "hadifp",
+        "type": "$p",
+        "conclusion": "|- ( hadd ( ph , ps , ch ) <-> if- ( ph , ( ps <-> ch ) , ( ps \\/_ ch ) ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wph wps wch whad wps wch wb wps wch wxo wph wps wch had1 wph wps wch had0 casesifp",
+        "references": [
+            "had1",
+            "had0",
+            "whad",
+            "wb",
+            "casesifp",
+            "wxo"
+        ]
+    },
+    {
+        "theorem": "nic-isw1",
+        "type": "$p",
+        "conclusion": "|- ( ph -/\\ th )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff th"
+        ],
+        "e_hypos": [
+            "|- ( th -/\\ ph )"
+        ],
+        "proof_steps": "wth wph wnan wph wth wnan wph wth wnan nic-isw1.1 wph wth nic-swap nic-mp",
+        "references": [
+            "nic-mp",
+            "nic-swap",
+            "wnan"
+        ]
+    },
+    {
+        "theorem": "nic-bijust",
+        "type": "$p",
+        "conclusion": "|- ( ( ta -/\\ ta ) -/\\ ( ( ta -/\\ ta ) -/\\ ( ta -/\\ ta ) ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ta"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wta wta nic-swap",
+        "references": [
+            "nic-swap"
+        ]
+    },
+    {
+        "theorem": "arg-ax",
+        "type": "$p",
+        "conclusion": "|- ( ( ph -/\\ ( ps -/\\ ch ) ) -/\\ ( ( ph -/\\ ( ps -/\\ ch ) ) -/\\ ( ( th -/\\ ch ) -/\\ ( ( ch -/\\ th ) -/\\ ( ph -/\\ th ) ) ) ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch",
+            "wff th"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wps wch wnan wnan wph wps wch wnan wnan wth wch wnan wch wth wnan wph wth wnan wnan wnan wnan wnan wph wps wch wnan wnan wph wps wch wnan wnan wth wch wnan wch wth wnan wph wth wnan wnan wnan wa wi wph wps wch wnan wnan wth wch wnan wch wth wnan wph wth wnan wnan wnan wph wps wch wa wi wth wch wnan wch wth wnan wph wth wnan wa wi wph wps wch wnan wnan wth wch wnan wch wth wnan wph wth wnan wnan wnan wth wch wnan wth wch wa wn wph wps wch wa wi wch wth wnan wph wth wnan wa wth wch df-nan wph wps wch wa wi wth wch wa wn wch wth wa wn wph wth wa wn wa wch wth wnan wph wth wnan wa wph wps wch wa wi wch wth wa wn wph wth wa wn wa wth wch wa wch wth wa wn wph wth wa wn wa wn wch wth wa wph wth wa wo wph wps wch wa wi wth wch wa wch wth wa wph wth wa pm4.57 wph wps wch wa wi wch wth wa wph wth wa wo wch wth wa wth wch wa wph wps wch wa wi wch wph wo wch wi wch wth wa wph wth wa wo wch wth wa wi wch wph wo wph wps wch wa wi wch wch wph wo wph wps wch wa wch wph wn wch wph wo wch wph wch orel2 com12 wps wch wa wch wi wch wph wo wps wch simpr a1i jad com12 wch wch wi wph wch wi wa wch wth wa wch wth wa wi wph wth wa wch wth wa wi wa wch wph wo wch wi wch wth wa wph wth wa wo wch wth wa wi wch wch wi wch wth wa wch wth wa wi wph wch wi wph wth wa wch wth wa wi wch wch wth pm3.45 wph wch wth pm3.45 anim12i wch wch wph jaob wch wth wa wch wth wa wph wth wa jaob 3imtr4i syl wch wth pm3.22 syl6 syl5bi con1d wch wth wa wn wch wth wnan wph wth wa wn wph wth wnan wch wth wnan wch wth wa wn wch wth df-nan biimpri wph wth wnan wph wth wa wn wph wth df-nan biimpri anim12i syl6 syl5bi wph wps wch nannan wth wch wnan wch wth wnan wph wth wnan nannan 3imtr4i ancli wph wps wch wnan wnan wph wps wch wnan wnan wth wch wnan wch wth wnan wph wth wnan wnan wnan nannan mpbir",
+        "references": [
+            "wo",
+            "com12",
+            "nannan",
+            "wi",
+            "syl",
+            "wn",
+            "jaob",
+            "biimpri",
+            "wa",
+            "con1d",
+            "a1i",
+            "3imtr4i",
+            "jad",
+            "orel2",
+            "pm4.57",
+            "pm3.45",
+            "pm3.22",
+            "wnan",
+            "syl6",
+            "simpr",
+            "ancli",
+            "mpbir",
+            "anim12i",
+            "syl5bi",
+            "df-nan"
+        ]
+    },
+    {
+        "theorem": "bj-dfbi6",
+        "type": "$p",
+        "conclusion": "|- ( ( ph <-> ps ) <-> ( ( ph \\/ ps ) <-> ( ph /\\ ps ) ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wps wb wph wps wo wph wps wa wi wph wps wo wph wps wa wb wph wps bj-dfbi5 wph wps wo wph wps wa wi wph wps wo wph wps wa wb wph wps wo wph wps wa wi wph wps wo wph wps wa wph wps wo wph wps wa wi id wph wps wph animorr impbid1 wph wps wo wph wps wa biimp impbii bitri",
+        "references": [
+            "impbii",
+            "bj-dfbi5",
+            "wo",
+            "animorr",
+            "id",
+            "wa",
+            "wb",
+            "wi",
+            "biimp",
+            "impbid1",
+            "bitri"
+        ]
+    },
+    {
+        "theorem": "tsbi2",
+        "type": "$p",
+        "conclusion": "|- ( th -> ( ( ph \\/ ps ) \\/ ( ph <-> ps ) ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff th"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wps wo wph wps wb wo wth wph wn wps wn wa wph wps wo wph wps wb wo wph wn wps wn wa wph wps wb wph wps wo wph wps pm5.21 olcd wph wn wps wn wa wn wph wps wo wph wps wb wph wn wps wn wa wn wph wps wo wph wps pm4.57 biimpi orcd pm2.61i a1i",
+        "references": [
+            "olcd",
+            "orcd",
+            "wo",
+            "a1i",
+            "wa",
+            "wb",
+            "biimpi",
+            "pm2.61i",
+            "pm4.57",
+            "wn",
+            "pm5.21"
+        ]
+    },
+    {
+        "theorem": "ifpxorcor",
+        "type": "$p",
+        "conclusion": "|- ( if- ( ph , -. ps , ps ) <-> if- ( ps , -. ph , ph ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wps wn wps wn wn wif wps wn wph wph wn wif wph wps wn wps wif wps wph wn wph wif wph wps wn ifpbicor wps wps wn wn wb wph wps wn wps wif wph wps wn wps wn wn wif wb wps notnotb wps wps wn wn wph wps wn ifpbi3 ax-mp wps wph wn wph ifpn 3bitr4i",
+        "references": [
+            "3bitr4i",
+            "wif",
+            "ifpbicor",
+            "ifpbi3",
+            "ifpn",
+            "wb",
+            "notnotb",
+            "wn",
+            "ax-mp"
+        ]
+    },
+    {
+        "theorem": "ifpbiidcor2",
+        "type": "$p",
+        "conclusion": "|- -. if- ( ph , -. ph , ph )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wph wn wph wif wn wph wph wph wn wif wph ifpbiidcor wph wph wph ifpnot23b mpbir",
+        "references": [
+            "wif",
+            "ifpbiidcor",
+            "mpbir",
+            "ifpnot23b",
+            "wn"
+        ]
+    },
+    {
+        "theorem": "ifpananb",
+        "type": "$p",
+        "conclusion": "|- ( if- ( ph , ( ps /\\ ch ) , ( th /\\ ta ) ) <-> ( if- ( ph , ps , th ) /\\ if- ( ph , ch , ta ) ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch",
+            "wff th",
+            "wff ta"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wps wch wa wth wta wa wif wph wps wn wch wn wo wn wth wn wta wn wo wn wif wph wps wth wif wph wch wta wif wa wps wch wa wps wn wch wn wo wn wb wth wta wa wth wn wta wn wo wn wb wph wps wch wa wth wta wa wif wph wps wn wch wn wo wn wth wn wta wn wo wn wif wb wps wch anor wth wta anor wps wch wa wps wn wch wn wo wn wth wta wa wth wn wta wn wo wn wph ifpbi23 mp2an wph wps wn wch wn wo wth wn wta wn wo wif wn wph wps wth wif wn wph wch wta wif wn wo wn wph wps wn wch wn wo wn wth wn wta wn wo wn wif wph wps wth wif wph wch wta wif wa wph wps wn wch wn wo wth wn wta wn wo wif wph wps wth wif wn wph wch wta wif wn wo wph wps wn wch wn wo wth wn wta wn wo wif wph wps wn wth wn wif wph wch wn wta wn wif wo wph wps wth wif wn wph wch wta wif wn wo wph wps wn wch wn wth wn wta wn ifpororb wph wps wn wth wn wif wph wps wth wif wn wph wch wn wta wn wif wph wch wta wif wn wph wps wth ifpnotnotb wph wch wta ifpnotnotb orbi12i bitri notbii wph wps wn wch wn wo wth wn wta wn wo ifpnotnotb wph wps wth wif wph wch wta wif anor 3bitr4i bitri",
+        "references": [
+            "3bitr4i",
+            "wo",
+            "notbii",
+            "wif",
+            "mp2an",
+            "orbi12i",
+            "wa",
+            "ifpororb",
+            "bitri",
+            "ifpbi23",
+            "wb",
+            "ifpnotnotb",
+            "wn",
+            "anor"
+        ]
+    },
+    {
+        "theorem": "ifpxorxorb",
+        "type": "$p",
+        "conclusion": "|- ( if- ( ph , ( ps \\/_ ch ) , ( th \\/_ ta ) ) <-> ( if- ( ph , ps , th ) \\/_ if- ( ph , ch , ta ) ) )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch",
+            "wff th",
+            "wff ta"
+        ],
+        "e_hypos": [],
+        "proof_steps": "wph wps wch wxo wth wta wxo wif wph wps wch wb wn wth wta wb wn wif wph wps wth wif wph wch wta wif wxo wps wch wxo wps wch wb wn wb wth wta wxo wth wta wb wn wb wph wps wch wxo wth wta wxo wif wph wps wch wb wn wth wta wb wn wif wb wps wch df-xor wth wta df-xor wps wch wxo wps wch wb wn wth wta wxo wth wta wb wn wph ifpbi23 mp2an wph wps wch wb wth wta wb wif wn wph wps wth wif wph wch wta wif wb wn wph wps wch wb wn wth wta wb wn wif wph wps wth wif wph wch wta wif wxo wph wps wch wb wth wta wb wif wph wps wth wif wph wch wta wif wb wph wps wch wth wta ifpbibib notbii wph wps wch wb wth wta wb ifpnotnotb wph wps wth wif wph wch wta wif df-xor 3bitr4i bitri",
+        "references": [
+            "df-xor",
+            "notbii",
+            "3bitr4i",
+            "wif",
+            "mp2an",
+            "ifpbibib",
+            "ifpbi23",
+            "wb",
+            "ifpnotnotb",
+            "wn",
+            "wxo",
+            "bitri"
+        ]
+    },
+    {
+        "theorem": "anabss7p1",
+        "type": "$p",
+        "conclusion": "|- ( ( ps /\\ ph ) -> ch )",
+        "d_vars": "",
+        "f_hypos": [
+            "wff ph",
+            "wff ps",
+            "wff ch"
+        ],
+        "e_hypos": [
+            "|- ( ( ( ps /\\ ph ) /\\ ph ) -> ch )"
+        ],
+        "proof_steps": "wps wph wch anabss7p1.1 anabss3",
+        "references": [
+            "anabss3"
+        ]
+    }
+]
