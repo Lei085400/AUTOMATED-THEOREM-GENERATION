@@ -1,5 +1,5 @@
 $c ( ) -> wff -. |- <-> -/\ \/_ /\ \/ class setvar if- , A. T. F. = hadd cadd $.
-$v ps ch th ze A mu la et si rh ka x B y ph ta $.
+$v si x ch et th ze A y ph la B ka ta ps rh mu $.
 wph $f wff ph $.
 wps $f wff ps $.
 wch $f wff ch $.
