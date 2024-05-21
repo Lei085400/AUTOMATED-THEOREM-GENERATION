@@ -59,9 +59,11 @@ def tactic_generator(axiom_file,symbol_file):
   #                      'w2',
   #                      ]
   tactic_candidates = []
-  
+  count = 0
   with open(symbol_file, 'r') as f:
     for line in f:
+      if count <= 6:
+        count += 1
         # 解析 JSON 对象并添加到列表中
         json_data = json.loads(line)
         tactic_candidates.append(json_data["theorem"])
@@ -231,14 +233,15 @@ def new_theorem(node, mm, assersions,assertion_labels,symbol_dict):
       # return True
       new_conclusion = node.state[-1]
       new_assersion = mm.fs.make_assertion(new_conclusion) # 获取疑似新结论的完整assertion
-      node.assersion = new_assersion
-      trans_assertion, new_assertion_flag = is_new_assertion(new_assersion,assersions,symbol_dict)
+      
+      trans_assersion, new_assertion_flag = is_new_assertion(new_assersion,assersions,symbol_dict)
+      node.assersion = trans_assersion
       if not new_assertion_flag:# 不属于新定理
           # print('It is not new theorem')
           return False
       else: #属于新定理,接下来提取证明步骤
           # print('New theorem!')
-          assersions.append(trans_assertion)  #assertions数组添加新生成的assertion
+          assersions.append(trans_assersion)  #assertions数组添加新生成的assertion
           # print('new assertion:',new_assersion)  
           return True
   return False 
@@ -563,7 +566,7 @@ class MCTS:
     def runmcts(self, mm, f_hyps, e_hyps, axiom_file,symbol_file):
      
       node =  self.node
-      computation_budget = 20000
+      computation_budget = 5000
       assersions,assertion_labels = read_axioms_json(axiom_file) # 获取已有公理的assertion list
       symbol_dict = read_symbols_json(symbol_file)  #获取符号字典
       outputs = []

@@ -13,10 +13,10 @@ class policy_model(nn.Module):
         self.device = device
         self.feature_size = feature_size
 
-        self.action1 = nn.Linear(in_features=feature_size, out_features=16)
-        self.action2 = nn.Linear(in_features=16, out_features=16)
+        self.action1 = nn.Linear(in_features=feature_size, out_features=32)
+        self.action2 = nn.Linear(in_features=32, out_features=32)
 
-        self.action_head = nn.Linear(in_features=16, out_features=1)
+        self.action_head = nn.Linear(in_features=32, out_features=1)
 
     def forward(self, x):
         # print("hello")
