@@ -10,7 +10,7 @@ import openai
 from tqdm import tqdm
 
 outputs = []
-with open('output.json', 'r') as f:
+with open('out.json', 'r') as f:
     for line in f:
         # 解析 JSON 对象并添加到列表中
         json_data = json.loads(line)

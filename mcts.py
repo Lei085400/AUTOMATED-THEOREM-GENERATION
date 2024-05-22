@@ -51,22 +51,37 @@ def encode_tactic(tactic,feature_size):
     return encode_tactic
 
 
+def cosine_similarity(vector1, vector2):
+    # 计算向量的内积
+    dot_product = np.dot(vector1, vector2)
+    
+    # 计算向量的长度
+    norm_vector1 = np.linalg.norm(vector1)
+    norm_vector2 = np.linalg.norm(vector2)
+    
+    # 计算余弦相似度
+    if norm_vector1 != 0 and norm_vector2 != 0:
+        cosine_sim = dot_product / (norm_vector1 * norm_vector2)
+    else:
+        cosine_sim = 0  # 避免除零错误
+    
+    return cosine_sim
+
+
 def tactic_generator(axiom_file,symbol_file):
-  # tactic_candidates = ['wp',
-  #                      'wr',
-  #                      'ws',
-  #                      'wq',
-  #                      'w2',
-  #                      ]
+
   tactic_candidates = []
   with open(symbol_file, 'r') as f:
     for line in f:
         # 解析 JSON 对象并添加到列表中
         json_data = json.loads(line)
         tactic_candidates.append(json_data["theorem"])
-        
+  
+  count = 0
   with open(axiom_file, 'r') as f:
     for line in f:
+      if(count <= 21):
+        count += 1
         # 解析 JSON 对象并添加到列表中
         json_data = json.loads(line)
         tactic_candidates.append(json_data["theorem"])  
@@ -270,6 +285,7 @@ def generate_theorem(node,name,assertion_labels):
   f_hypos = [" ".join(pair) for pair in node.assersion[1]]
   e_hypos = [" ".join(pair) for pair in node.assersion[2]]
   conclusion = " ".join(node.assersion[3])
+  # conclusion = conclusion.replace('wff', '|-')
   proof_steps = " ".join(node.path)
   for i in node.path:
     if i in assertion_labels:
@@ -325,6 +341,7 @@ class Node(object):
     self.tactic_candidates = None    
     self.assersion = None
     self.depth = 0 
+    self.similarity = 0
 
   def set_state(self, state):
     self.state = state
@@ -362,7 +379,7 @@ class Node(object):
     Select action according to the visit count distribution and the temperature.
     """
     visit_counts = np.array([child.visit_times for child in self.children])
-    actions = [action for action in self.children.state.tac]
+    actions = [action for action in self.children.tac]
     action = actions[np.argmafx(visit_counts)]
     return action
 
@@ -374,10 +391,26 @@ class Node(object):
       return -1
     elif (self.flag == True):
       if(self.new == True):
-        return 1
+        with open('output180.json', 'r') as file:
+          # 逐行读取 JSON 文件
+          for line in file:
+              # 解析 JSON 对象
+              json_object = json.loads(line)
+              conclusion = json_object['conclusion']
+              max_length = max(len(self.state), len(conclusion))
+              encode_set = encode_state(conclusion,max_length)
+              encode_state = encode_state(self.state,max_length)
+              vector_set = np.array(encode_set)
+              vector_state = np.array(encode_state)
+              similarity = cosine_similarity(vector_set, vector_state)
+              if(similarity > self.similarity):
+                self.similarity = similarity
+        return self.similarity
+        # return 1
       else:
         return 0
     
+  
   def proof(self, tac, mm, f_hyps, e_hyps):
     state = copy.copy(self.state)
     correct_flag, state = mm.verify_and_calculate_proof_step_normal(f_hyps,e_hyps,tac,state, 0)
@@ -588,43 +621,13 @@ class MCTS:
         # 3. Update all passing nodes with reward
         self.backup(expand_node, reward)
 
-        # if(expand_node.new): #生成了新定理
-        #   path = []  #新定理所用策略
-        #   unused_list = expand_node.state[:-1]
-        #   new_node = copy.copy(expand_node)
-        #   while new_node.parent is not None:
-        #     if(new_node.state == unused_list):
-        #       break
-        #     path.append(new_node.tac)
-        #     new_node = new_node.parent
-        #   path.reverse()
-        #   expand_node.path = path
-        #   # print("该定理策略为：")
-        #   # print(path)
-        #   print("#############################")
-        #   print("新定理为：")
-        #   new_theorem = generate_theorem(expand_node,name+str(i),assertion_labels)
-          
-        #   with open('out.json', 'a') as file:
-        #     json.dump(new_theorem, file)
-        #     file.write('\n')
-        #   print(new_theorem)
-          # path = []
-          # new_node = copy.copy(expand_node)
-          # while new_node.tac is not None:
-          #   path.append(new_node.tac)
-          #   new_node = new_node.parent
-          # path.reverse()
-          # # expand_node.path = path
-          # print("该定理策略为：")
-          # print(path)
       return node,len(tactic_generator(axiom_file,symbol_file))
 
 
     def runmcts(self, mm, f_hyps, e_hyps, axiom_file,symbol_file):
      
       node =  self.node
-      computation_budget = 2000
+      computation_budget = 5000
       assersions,assertion_labels = read_axioms_json(axiom_file) # 获取已有公理的assertion list
       symbol_dict = read_symbols_json(symbol_file)  #获取符号字典
       outputs = []

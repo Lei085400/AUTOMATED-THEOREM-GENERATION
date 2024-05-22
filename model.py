@@ -13,10 +13,10 @@ class policy_model(nn.Module):
         self.device = device
         self.feature_size = feature_size
 
-        self.action1 = nn.Linear(in_features=feature_size, out_features=32)
-        self.action2 = nn.Linear(in_features=32, out_features=32)
+        self.action1 = nn.Linear(in_features=feature_size, out_features=16)
+        self.action2 = nn.Linear(in_features=16, out_features=16)
 
-        self.action_head = nn.Linear(in_features=32, out_features=1)
+        self.action_head = nn.Linear(in_features=16, out_features=1)
 
     def forward(self, x):
         # print("hello")
@@ -54,10 +54,10 @@ class value_model(nn.Module):
         self.device = device
         self.feature_size = feature_size
 
-        self.value1 = nn.Linear(in_features=feature_size, out_features=16)
-        self.value2 = nn.Linear(in_features=16, out_features=16)
+        self.value1 = nn.Linear(in_features=feature_size, out_features=32)
+        self.value2 = nn.Linear(in_features=32, out_features=32)
 
-        self.value_head = nn.Linear(in_features=16, out_features=1)
+        self.value_head = nn.Linear(in_features=32, out_features=1)
 
     def forward(self, x):
         x = F.relu(self.value1(x))
@@ -80,67 +80,3 @@ class value_model(nn.Module):
         return v.data.cpu().numpy()[0]
 
 
-
-
-# device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-# feature_size = 3 #特征向量的size
-# input_policy = np.array([[1,8,4,5,8,6]])
-# input_policy = torch.FloatTensor(np.array(input_policy).astype(np.float64))
-# policyModel = policy_model(feature_size*2, device)
-# result = policyModel(input_policy)
-# print(result)
-
-# policy = policy_model(feature_size,device)
-# input_policy = np.array([[1,8,4,5,8,6],[8,2,6,4,5,3]])
-# policy_result = policy.predict(input_policy)
-# target = torch.tensor([0.65])
-# print(policy_result)
-
-# def loss_pi(targets, outputs):
-#     loss = torch.sum((targets-outputs)**2)/targets.size()[0]
-#     return loss
-
-# pi_loss = loss_pi(target,policy_result)
-# print(pi_loss)
-
-# optimizer = optim.Adam(policy.parameters(), lr=5e-4)
-# optimizer.zero_grad()
-# pi_loss.requires_grad_(True)
-# pi_loss.backward()
-# optimizer.step()
-
-# policy = policy_model(feature_size,device)
-# input_polciy = np.array([[1,8,4,5,8,6],[8,2,6,4,5,3]])
-# policy_result = policy.predict(input_polciy)
-# print(policy_result)
-# pi_loss = loss_pi(target,policy_result)
-# print(pi_loss)
-
-####################################################
-
-# value = value_model(feature_size,device)
-# input_state = np.array([[1,2,3,4,5,6],[1,2,6,4,5,6]])
-# value_result = value.predict(input_state)
-# target = torch.tensor([0.65])
-# print(target)
-# print(torch.tensor(value_result))
-
-# def loss_pi(targets, outputs):
-#     loss = torch.sum((targets-outputs)**2)/targets.size()[0]
-#     return loss
-
-# v_loss = loss_pi(target,value_result)
-# print(v_loss)
-
-# optimizer = optim.Adam(value.parameters(), lr=5e-4)
-# optimizer.zero_grad()
-# v_loss.requires_grad_(True)
-# v_loss.backward()
-# optimizer.step()
-
-# value = value_model(feature_size,device)
-# input_state = np.array([[1,2,3,4,5,6],[1,2,6,4,5,6]])
-# value_result = value.predict(input_state)
-# target = torch.tensor([0.65])
-# v_loss = loss_pi(target,value_result)
-# print(v_loss)

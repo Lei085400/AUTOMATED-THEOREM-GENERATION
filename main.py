@@ -15,7 +15,7 @@ device = torch.device('cpu')
 
 args = {
     'batch_size': 20,
-    'numIters': 10,                                # Total number of training iterations
+    'numIters': 20,                                # Total number of training iterations
     'num_simulations': 100,                         # Total number of MCTS simulations to run when deciding on a move to play
     'numEps': 5,                                  # Number of full games (episodes) to run during each iteration
     'numItersForTrainExamplesHistory': 20,
