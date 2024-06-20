@@ -59,6 +59,12 @@ class Trainer:
             action_probs = [0 for _ in range(tac_num)]
             for index, children_node in enumerate(node.children):
                 action_probs[index] = children_node.visit_times  
+                
+                if(children_node.flag == False):
+                    action_probs[index] = 0
+                if(children_node.new == True):
+                    action_probs[index] = 1
+                    
                 if(action_probs[index] > max_times): # 找到当前节点中概率最大(访问次数最多)的子节点
                     max_times = action_probs[index]
                     max_i = index
@@ -96,7 +102,7 @@ class Trainer:
             except:
                 finish = 1
                 
-            if (reward is not None or finish == 1): 
+            if (finish == 1 or node.depth >= 10): 
                 policy = []
                 value = []
                 for hist_input, hist_action_probs in policy_examples:

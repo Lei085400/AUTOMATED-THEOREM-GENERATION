@@ -353,8 +353,8 @@ class MM:
         self.stop_label = copy.deepcopy(self.backup_stop_label)
         self.verify_proofs = copy.deepcopy(self.backup_verify_proofs)
 
-        if print:
-            print(self)
+        # if print:
+        #     print(self)
 
     def update_backup(self):
         self.backup_constants = copy.deepcopy(self.constants)

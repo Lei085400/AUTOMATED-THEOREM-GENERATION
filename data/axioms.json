@@ -1,0 +1,33 @@
+{"theorem": "wn", "type": "$a", "conclusion": "wff -. ph", "d_vars": "", "f_hypos": ["wff ph"], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "wi", "type": "$a", "conclusion": "wff ( ph -> ps )", "d_vars": "", "f_hypos": ["wff ph", "wff ps"], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "ax-mp", "type": "$a", "conclusion": "|- ps", "d_vars": "", "f_hypos": ["wff ph", "wff ps"], "e_hypos": ["|- ph", "|- ( ph -> ps )"], "proof_steps": "", "references": ""}
+{"theorem": "ax-1", "type": "$a", "conclusion": "|- ( ph -> ( ps -> ph ) )", "d_vars": "", "f_hypos": ["wff ph", "wff ps"], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "ax-2", "type": "$a", "conclusion": "|- ( ( ph -> ( ps -> ch ) ) -> ( ( ph -> ps ) -> ( ph -> ch ) ) )", "d_vars": "", "f_hypos": ["wff ph", "wff ps", "wff ch"], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "ax-3", "type": "$a", "conclusion": "|- ( ( -. ph -> -. ps ) -> ( ps -> ph ) )", "d_vars": "", "f_hypos": ["wff ph", "wff ps"], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "wb", "type": "$a", "conclusion": "wff ( ph <-> ps )", "d_vars": "", "f_hypos": ["wff ph", "wff ps"], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "df-bi", "type": "$a", "conclusion": "|- -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) )", "d_vars": "", "f_hypos": ["wff ph", "wff ps"], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "wa", "type": "$a", "conclusion": "wff ( ph /\\ ps )", "d_vars": "", "f_hypos": ["wff ph", "wff ps"], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "df-an", "type": "$a", "conclusion": "|- ( ( ph /\\ ps ) <-> -. ( ph -> -. ps ) )", "d_vars": "", "f_hypos": ["wff ph", "wff ps"], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "wo", "type": "$a", "conclusion": "wff ( ph \\/ ps )", "d_vars": "", "f_hypos": ["wff ph", "wff ps"], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "df-or", "type": "$a", "conclusion": "|- ( ( ph \\/ ps ) <-> ( -. ph -> ps ) )", "d_vars": "", "f_hypos": ["wff ph", "wff ps"], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "wif", "type": "$a", "conclusion": "wff if- ( ph , ps , ch )", "d_vars": "", "f_hypos": ["wff ph", "wff ps", "wff ch"], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "df-ifp", "type": "$a", "conclusion": "|- ( if- ( ph , ps , ch ) <-> ( ( ph /\\ ps ) \\/ ( -. ph /\\ ch ) ) )", "d_vars": "", "f_hypos": ["wff ph", "wff ps", "wff ch"], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "w3o", "type": "$a", "conclusion": "wff ( ph \\/ ps \\/ ch )", "d_vars": "", "f_hypos": ["wff ph", "wff ps", "wff ch"], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "w3a", "type": "$a", "conclusion": "wff ( ph /\\ ps /\\ ch )", "d_vars": "", "f_hypos": ["wff ph", "wff ps", "wff ch"], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "df-3or", "type": "$a", "conclusion": "|- ( ( ph \\/ ps \\/ ch ) <-> ( ( ph \\/ ps ) \\/ ch ) )", "d_vars": "", "f_hypos": ["wff ph", "wff ps", "wff ch"], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "df-3an", "type": "$a", "conclusion": "|- ( ( ph /\\ ps /\\ ch ) <-> ( ( ph /\\ ps ) /\\ ch ) )", "d_vars": "", "f_hypos": ["wff ph", "wff ps", "wff ch"], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "wnan", "type": "$a", "conclusion": "wff ( ph -/\\ ps )", "d_vars": "", "f_hypos": ["wff ph", "wff ps"], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "df-nan", "type": "$a", "conclusion": "|- ( ( ph -/\\ ps ) <-> -. ( ph /\\ ps ) )", "d_vars": "", "f_hypos": ["wff ph", "wff ps"], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "wxo", "type": "$a", "conclusion": "wff ( ph \\/_ ps )", "d_vars": "", "f_hypos": ["wff ph", "wff ps"], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "df-xor", "type": "$a", "conclusion": "|- ( ( ph \\/_ ps ) <-> -. ( ph <-> ps ) )", "d_vars": "", "f_hypos": ["wff ph", "wff ps"], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "wal", "type": "$a", "conclusion": "wff A. x ph", "d_vars": "", "f_hypos": ["wff ph", "setvar x"], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "cv", "type": "$a", "conclusion": "class x", "d_vars": "", "f_hypos": ["setvar x"], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "wceq", "type": "$a", "conclusion": "wff A = B", "d_vars": "", "f_hypos": ["class A", "class B"], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "wtru", "type": "$a", "conclusion": "wff T.", "d_vars": "", "f_hypos": [], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "df-tru", "type": "$a", "conclusion": "|- ( T. <-> ( A. x x = x -> A. x x = x ) )", "d_vars": "", "f_hypos": ["setvar x"], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "wfal", "type": "$a", "conclusion": "wff F.", "d_vars": "", "f_hypos": [], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "df-fal", "type": "$a", "conclusion": "|- ( F. <-> -. T. )", "d_vars": "", "f_hypos": [], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "whad", "type": "$a", "conclusion": "wff hadd ( ph , ps , ch )", "d_vars": "", "f_hypos": ["wff ph", "wff ps", "wff ch"], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "df-had", "type": "$a", "conclusion": "|- ( hadd ( ph , ps , ch ) <-> ( ( ph \\/_ ps ) \\/_ ch ) )", "d_vars": "", "f_hypos": ["wff ph", "wff ps", "wff ch"], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "wcad", "type": "$a", "conclusion": "wff cadd ( ph , ps , ch )", "d_vars": "", "f_hypos": ["wff ph", "wff ps", "wff ch"], "e_hypos": [], "proof_steps": "", "references": ""}
+{"theorem": "df-cad", "type": "$a", "conclusion": "|- ( cadd ( ph , ps , ch ) <-> ( ( ph /\\ ps ) \\/ ( ch /\\ ( ph \\/_ ps ) ) ) )", "d_vars": "", "f_hypos": ["wff ph", "wff ps", "wff ch"], "e_hypos": [], "proof_steps": "", "references": ""}
